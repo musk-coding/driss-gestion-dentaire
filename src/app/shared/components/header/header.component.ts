@@ -9,14 +9,19 @@ export class HeaderComponent implements OnInit {
   @Output()
   toggleSidebarEvent = new EventEmitter<any>();
 
+  public showDropdown: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   toggleSidebar() {
-    console.log('Toggling sidebar!')
-    this.toggleSidebarEvent.emit('Driss')
+    this.toggleSidebarEvent.emit()
+  }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
   }
 
 }
